@@ -6,7 +6,6 @@ interface ProfileProps {
 }
 
 export function Profile({ showProfileDate = true }: ProfileProps) {
-  console.log(showProfileDate)
   return (
     <Flex
       align="center"
