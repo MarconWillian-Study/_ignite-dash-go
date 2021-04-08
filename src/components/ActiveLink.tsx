@@ -4,7 +4,7 @@ import { useRouter } from "next/dist/client/router";
 
 interface ActiveLinkProps extends LinkProps {
   children: ReactElement;
-  shouldMatchExactHref: boolean;
+  shouldMatchExactHref?: boolean;
 }
 
 export function ActiveLink({
