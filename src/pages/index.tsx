@@ -81,6 +81,7 @@ export default function SignIn() {
           mt="8"
           colorScheme="pink" 
           size="lg"
+          loadingText="Entrando"
           isLoading={formState.isSubmitting}
         >
           Entrar
