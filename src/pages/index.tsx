@@ -1,6 +1,5 @@
 import { Flex, Button, Stack } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
-import Link from 'next/link';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup'
