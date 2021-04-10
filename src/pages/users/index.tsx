@@ -18,7 +18,7 @@ import { Spinner } from "@chakra-ui/spinner";
 
 export default function UserList() {
   const {data, isLoading, error} = useQuery('users', async () => {
-    const data = await fetch('http://localhost:3000/api/users')
+    const data = await fetch('/api/users')
       .then(response => response.json());
 
     const users = data.users.map(user => {
@@ -71,7 +71,7 @@ export default function UserList() {
             </Flex>
           ) : ( 
             error ? (
-              <Flex>
+              <Flex justify="center">
                 <Text>Falha ao obter dados dos usuários.</Text>
               </Flex>
 
