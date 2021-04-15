@@ -105,8 +105,12 @@ export default function UserList() {
                     })}
                   </Tbody>
                 </Table>
-              
-                <Pagination />
+                <Pagination 
+                  totalCountOfRegisters={200}
+                  registersPerPage={10}
+                  currentPage={16}
+                  onPageChange={() => {console.log('asd')}}
+                />
               </>
             )
           )}
