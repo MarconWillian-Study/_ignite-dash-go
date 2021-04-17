@@ -9,13 +9,12 @@ import { theme } from '../styles/theme';
 import { SidebarDrawerProvider } from '../contexts/SidebarDrawerContext';
 import { Header } from '../components/Header';
 import { makeServer } from '../services/mirage';
+import { queryClient } from '../services/queryClient';
 
 
 if (process.env.NODE_ENV === 'development') {
   makeServer();
 }
-
-const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
