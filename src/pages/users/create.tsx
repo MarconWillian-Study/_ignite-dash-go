@@ -4,9 +4,13 @@ import Link from "next/link";
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup'
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useMutation } from "react-query";
 
 import { Input } from "../../components/Form/Input";
 import { Sidebar } from "../../components/Sidebar";
+import { api } from "../../services/api";
+import { queryClient } from "../../services/queryClient";
+import { useRouter } from "next/dist/client/router";
 
 
 
@@ -26,7 +30,23 @@ const createUserFormSchema = Yup.object().shape({
   ], 'As senhas precisam ser iguais')
 })
 
-export default function UserCreate() {
+export default function CreateUser() {
+  const createUser = useMutation(async (user: createUserFormData) => {
+    const response = await api.post('users', {
+      user: {
+        ...user,
+        created_at: new Date(),
+      }
+    })
+
+    return response.data.user;
+  }, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('users')
+    }
+  });
+  const router = useRouter();
+
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(createUserFormSchema)
   });
@@ -37,7 +57,9 @@ export default function UserCreate() {
 
   const handleCreateUser: SubmitHandler<createUserFormData> = async (values) => {
     await new Promise(resolve => setTimeout(resolve, 2000));
+    await createUser.mutateAsync(values);
 
+    router.push('/users')
     console.log(values);
   }
 
