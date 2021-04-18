@@ -18,7 +18,7 @@ yarn dev
 
 You can consult **Implantation** for you know mor about implement this project in Production.
 
-### 🔧 Instalação
+### 🔧 Installation
 
 Install dependencies of this project:
 
@@ -48,9 +48,9 @@ Nós usamos [SemVer](http://semver.org/) para controle de versão. Para as vers�
 * **Marcon Willian** - *Dashboard* - [MarconWillian](https://github.com/MarconWillian)
 * **Diego Fernandes** - *Teacher* - [diego3g](https://github.com/diego3g)
 
-## 📄 Licence
+## 📄 License
 
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
+This project is under a license MIT - see file [LICENSE](/license) for more details.
 
 ---
 ⌨️ with ❤️ by [Marcon Willian](https://github.com/MarconWillian) 😊
